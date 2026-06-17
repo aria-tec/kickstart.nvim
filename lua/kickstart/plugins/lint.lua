@@ -9,7 +9,13 @@ return {
     local lint = require 'lint'
     lint.linters_by_ft = {
       markdown = { 'markdownlint' }, -- Make sure to install `markdownlint` via mason / npm
+      php = { 'phpstan' }
     }
+     -- Larastan linter
+    if vim.fn.filereadable("vendor/bin/phpstan") == 1 then
+      lint.linters.phpstan.cmd = "vendor/bin/phpstan"
+    end
+
 
     -- To allow other plugins to add linters to require('lint').linters_by_ft,
     -- instead set linters_by_ft like this:
@@ -37,7 +43,7 @@ return {
     -- lint.linters_by_ft['inko'] = nil
     -- lint.linters_by_ft['janet'] = nil
     -- lint.linters_by_ft['json'] = nil
-    -- lint.linters_by_ft['markdown'] = nil
+    lint.linters_by_ft['markdown'] = nil
     -- lint.linters_by_ft['rst'] = nil
     -- lint.linters_by_ft['ruby'] = nil
     -- lint.linters_by_ft['terraform'] = nil
