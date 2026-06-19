@@ -1,0 +1,41 @@
+-- 1. Unduh plugin, tapi CEGAH vim.pack memuatnya secara otomatis!
+-- Perhatikan argumen kedua: { load = function() end }
+vim.pack.add({
+  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range '*' },
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/MunifTanjim/nui.nvim',
+}, { load = function() end }) -- <--- INI ADALAH KUNCI PENYELAMATNYA
+
+-- 2. Bangunkan lz.n
+vim.cmd.packadd("lz.n")
+local lzn = require("lz.n")
+
+-- 3. Konfigurasi lz.n
+lzn.load({
+  {
+    "neo-tree.nvim",
+    cmd = "Neotree",
+    keys = {
+      -- Menggunakan Lua callback menjamin Neovim tidak akan mencoba 
+      -- mengeksekusi perintah teks sebelum plugin 100% siap.
+      { "\\", function() vim.cmd("Neotree reveal") end, desc = "NeoTree reveal", silent = true },
+    },
+    before = function()
+      -- Dependensi dimuat HANYA saat lz.n memutuskan untuk memuat neo-tree
+      vim.cmd.packadd("plenary.nvim")
+      vim.cmd.packadd("nui.nvim")
+    end,
+    after = function()
+      -- Setup berjalan sempurna karena dependensi sudah siap
+      require("neo-tree").setup({
+        filesystem = {
+          window = {
+            mappings = {
+              ["\\"] = "close_window",
+            },
+          },
+        },
+      })
+    end,
+  }
+})
