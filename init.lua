@@ -268,6 +268,34 @@ do
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function() vim.hl.on_yank() end,
   })
+
+  -- [[ Custom Keymaps ]]
+  -- Pemetaan tombol khusus tambahan (Kustomisasi Pengguna)
+
+  -- Memindahkan baris/blok teks terpilih di visual mode
+  vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+  vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+
+  -- Menjaga kursor tetap di tengah saat navigasi halaman & pencarian
+  vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center cursor' })
+  vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center cursor' })
+  vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Search next and center cursor' })
+  vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Search previous and center cursor' })
+
+  -- Menjaga seleksi visual tetap aktif saat indentasi
+  vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and keep selection' })
+  vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and keep selection' })
+
+  -- Mengubah ukuran split windows secara praktis menggunakan Control + Arrow keys
+  vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<CR>', { desc = 'Increase window height' })
+  vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<CR>', { desc = 'Decrease window height' })
+  vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease window width' })
+  vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
+
+  -- Toggle diagnostics aktif/nonaktif
+  vim.keymap.set('n', '<leader>td', function()
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+  end, { desc = '[T]oggle [D]iagnostics' })
 end
 
 -- ============================================================
