@@ -171,6 +171,23 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  -- [[ Custom Options ]]
+  -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
+
+  -- Pengaturan Indentasi & Tab (sesuai .stylua.toml)
+  vim.o.expandtab = true        -- Mengubah karakter tab menjadi spasi
+  vim.o.shiftwidth = 2          -- Lebar spasi untuk setiap level indentasi
+  vim.o.tabstop = 2             -- Lebar representasi visual karakter Tab
+  vim.o.softtabstop = 2         -- Lebar indentasi saat menekan Tab/Backspace
+  vim.o.smartindent = true      -- Indentasi cerdas otomatis untuk baris baru
+
+  -- Perilaku mode Visual Block dan scroll horizontal
+  vim.o.virtualedit = 'block'   -- Mengizinkan kursor bergerak ke kolom kosong pada mode Visual Block
+  vim.o.sidescrolloff = 8       -- Jumlah kolom minimal di kiri dan kanan kursor saat scroll horizontal
+
+  -- Konfigurasi Autocomplete Pop-up
+  vim.o.completeopt = 'menu,menuone,noselect' -- Menghindari auto-select sebelum memilih eksplisit
 end
 
 -- ============================================================
@@ -701,7 +718,7 @@ do
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+    ts_ls = {},
 
     stylua = {}, -- Used to format Lua code
 
@@ -967,11 +984,11 @@ do
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug'
-  -- require 'kickstart.plugins.indent_line'
-  -- require 'kickstart.plugins.lint'
-  -- require 'kickstart.plugins.autopairs'
-  -- require 'kickstart.plugins.neo-tree'
-  -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
+  require 'kickstart.plugins.indent_line'
+  require 'kickstart.plugins.lint'
+  require 'kickstart.plugins.autopairs'
+  require 'kickstart.plugins.neo-tree'
+  require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
