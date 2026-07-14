@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 42 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **42 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -10,7 +10,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 3. [Autocompletion & Snippets (5 Plugin)](#3-autocompletion--snippets-5-plugin)
 4. [Formatting & Linting (2 Plugin)](#4-formatting--linting-2-plugin)
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
-6. [Navigasi & Pencarian (6 Plugin)](#6-navigasi--pencarian-6-plugin)
+6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (5 Plugin)](#7-integrasi-typescript--web-dev-5-plugin)
 8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
 9. [Estetika & Antarmuka UI (5 Plugin)](#9-estetika--antarmuka-ui-5-plugin)
@@ -103,7 +103,7 @@ Ekosistem parser teks canggih yang menganalisis kode sebagai struktur pohon logi
 
 ---
 
-## 6. Navigasi & Pencarian (6 Plugin)
+## 6. Navigasi & Pencarian (7 Plugin)
 
 Plugin yang mempermudah pergerakan kursor, perpindahan antar berkas, dan pencarian global.
 
@@ -119,6 +119,8 @@ Plugin yang mempermudah pergerakan kursor, perpindahan antar berkas, dan pencari
     *   **Fungsi:** Lompatan kursor super cepat di seluruh layar menggunakan penanda huruf unik (pemicu tombol: `s` atau `S`).
 *   ### [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
     *   **Fungsi:** Menghubungkan navigasi split jendela Neovim dengan pane **Tmux** menggunakan kombinasi tombol `Ctrl + h/j/k/l`.
+*   ### [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
+    *   **Fungsi:** Memperbaiki visual pencarian bawaan dengan menampilkan gelembung teks melayang berisi posisi kecocokan kata (`[index/total]`, misalnya `[3/12]`) langsung di samping kata yang dituju.
 
 ---
 

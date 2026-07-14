@@ -287,8 +287,12 @@ do
   -- Menjaga kursor tetap di tengah saat navigasi halaman & pencarian
   vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center cursor' })
   vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center cursor' })
-  vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Search next and center cursor' })
-  vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Search previous and center cursor' })
+  -- NOTIF: Baris n dan N di bawah ini dinonaktifkan (dikomentari) karena kita
+  -- mengalihkannya ke berkas modular `lua/custom/plugins/hlslens.lua`
+  -- agar terintegrasi penuh dengan tampilan visual indeks nvim-hlslens.
+  --
+  -- vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Search next and center cursor' })
+  -- vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Search previous and center cursor' })
 
   -- Menjaga seleksi visual tetap aktif saat indentasi
   vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and keep selection' })
