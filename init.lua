@@ -750,7 +750,11 @@ do
 
       -- Rename the variable under your cursor.
       --  Most Language Servers support renaming across files, etc.
-      map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
+      -- NOTIF: Baris bawaan di bawah ini dinonaktifkan (dikomentari) karena kita
+      -- menggunakan plugin `inc-rename.nvim` (yang dikonfigurasi secara modular
+      -- di `lua/custom/plugins/extra.lua`) untuk rename interaktif real-time.
+      --
+      -- map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
 
       -- Execute a code action, usually your cursor needs to be on top of an error
       -- or a suggestion from your LSP for this to activate.

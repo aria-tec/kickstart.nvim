@@ -26,3 +26,14 @@ require('illuminate').configure({
     providers = { 'lsp' },
   },
 })
+
+-- 3. inc-rename.nvim
+-- Melakukan rename variabel LSP secara interaktif / incremental (real-time preview)
+vim.pack.add { 'https://github.com/smjonas/inc-rename.nvim' }
+
+require('inc_rename').setup {}
+
+-- Map grn untuk memicu incremental rename dan mengisi nama lama secara otomatis
+vim.keymap.set('n', 'grn', function()
+  return ':IncRename ' .. vim.fn.expand('<cword>')
+end, { expr = true, desc = '[R]e[n]ame (incremental)' })
