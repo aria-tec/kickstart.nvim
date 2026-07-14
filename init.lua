@@ -797,6 +797,10 @@ do
     end,
   })
 
+  -- [[ SchemaStore ]]
+  -- Menyediakan skema validasi & autocomplete untuk berkas JSON/YAML
+  vim.pack.add { 'https://github.com/b0o/SchemaStore.nvim' }
+
   -- Enable the following language servers
   --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
   --  See `:help lsp-config` for information about keys and how to configure
@@ -813,6 +817,14 @@ do
     tailwindcss = {},
     intelephense = {},
     eslint = {},
+    jsonls = {
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    },
     html = {},
     cssls = {},
 
