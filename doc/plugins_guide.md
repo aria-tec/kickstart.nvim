@@ -177,4 +177,21 @@ Plugin yang menentukan keindahan visual editor, palet warna, dan tata letak jend
 
 ---
 
+## 10. Rekomendasi Modul Masa Depan (Rencana Pemasangan Selanjutnya)
+
+Berikut adalah modul-modul dari pustaka `mini.nvim` (yang sudah terpasang di sistem Anda) yang direkomendasikan untuk diaktifkan di masa depan untuk meningkatkan produktivitas pengeditan teks:
+
+*   ### [mini.splitjoin](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-splitjoin.md)
+    *   **Fungsi:** Pemisah dan penggabung argumen, array, objek, atau tag HTML.
+    *   **Cara Pakai (Masa Depan):** 
+        *   Tekan `gS` pada objek satu baris untuk memisahnya menjadi baris vertikal.
+        *   Tekan `gJ` untuk menggabungkannya kembali menjadi baris tunggal horizontal.
+    *   **Cara Aktivasi:** Tambahkan `require('mini.splitjoin').setup()` di dalam `init.lua`.
+*   ### [mini.align](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-align.md)
+    *   **Fungsi:** Penyelaras teks secara visual berdasarkan karakter tertentu (seperti `=`, `:`, `,`).
+    *   **Cara Pakai (Masa Depan):** Blok beberapa baris menggunakan Visual Mode (`v` atau `V`), tekan `ga` lalu ketik karakter perata (misal `=` untuk menyejajarkan tanda sama dengan pada variabel).
+    *   **Cara Aktivasi:** Tambahkan `require('mini.align').setup()` di dalam `init.lua`.
+
+---
+
 *Terakhir diperbarui: 15 Juli 2026*
