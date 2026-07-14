@@ -765,29 +765,36 @@ do
       --    See `:help CursorHold` for information about when this is executed
       --
       -- When you move your cursor, the highlights will be cleared (the second autocommand).
-      local client = vim.lsp.get_client_by_id(event.data.client_id)
-      if client and client:supports_method('textDocument/documentHighlight', event.buf) then
-        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-          buffer = event.buf,
-          group = highlight_augroup,
-          callback = vim.lsp.buf.document_highlight,
-        })
-
-        vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-          buffer = event.buf,
-          group = highlight_augroup,
-          callback = vim.lsp.buf.clear_references,
-        })
-
-        vim.api.nvim_create_autocmd('LspDetach', {
-          group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
-          callback = function(event2)
-            vim.lsp.buf.clear_references()
-            vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
-          end,
-        })
-      end
+      -- [[ Penyorotan Kata di Bawah Kursor ]]
+      -- NOTIF: Baris autocommand bawaan di bawah ini dinonaktifkan (dikomentari)
+      -- karena kita menggunakan plugin `vim-illuminate` (yang dikonfigurasi secara modular
+      -- di `lua/custom/plugins/extra.lua`). `vim-illuminate` lebih unggul karena mendukung
+      -- navigasi lompat Alt+n/Alt+p, serta fallback penyorotan menggunakan Treesitter/Regex
+      -- apabila LSP sedang mati.
+      --
+      -- local client = vim.lsp.get_client_by_id(event.data.client_id)
+      -- if client and client:supports_method('textDocument/documentHighlight', event.buf) then
+      --   local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+      --   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      --     buffer = event.buf,
+      --     group = highlight_augroup,
+      --     callback = vim.lsp.buf.document_highlight,
+      --   })
+      --
+      --   vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      --     buffer = event.buf,
+      --     group = highlight_augroup,
+      --     callback = vim.lsp.buf.clear_references,
+      --   })
+      --
+      --   vim.api.nvim_create_autocmd('LspDetach', {
+      --     group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+      --     callback = function(event2)
+      --       vim.lsp.buf.clear_references()
+      --       vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+      --     end,
+      --   })
+      -- end
 
       -- The following code creates a keymap to toggle inlay hints in your
       -- code, if the language server you are using supports them
