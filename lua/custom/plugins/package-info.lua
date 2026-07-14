@@ -13,12 +13,11 @@ require('package-info').setup {
 }
 
 -- Mendaftarkan Keymaps (Semua prompt/notifikasi menggunakan bahasa Inggris secara bawaan)
-local map_opts = { silent = true, noremap = true }
-vim.keymap.set('n', '<leader>nt', require('package-info').toggle, map_opts)
-vim.keymap.set('n', '<leader>nu', require('package-info').update, map_opts)
-vim.keymap.set('n', '<leader>nd', require('package-info').delete, map_opts)
-vim.keymap.set('n', '<leader>np', require('package-info').change_version, map_opts)
-vim.keymap.set('n', '<leader>ni', require('package-info').install, map_opts)
+vim.keymap.set('n', '<leader>nt', require('package-info').toggle, { silent = true, noremap = true, desc = '[T]oggle package versions' })
+vim.keymap.set('n', '<leader>nu', require('package-info').update, { silent = true, noremap = true, desc = '[U]pdate dependency on line' })
+vim.keymap.set('n', '<leader>nd', require('package-info').delete, { silent = true, noremap = true, desc = '[D]elete dependency on line' })
+vim.keymap.set('n', '<leader>np', require('package-info').change_version, { silent = true, noremap = true, desc = '[P]ackage change version' })
+vim.keymap.set('n', '<leader>ni', require('package-info').install, { silent = true, noremap = true, desc = '[I]nstall new dependency' })
 
 -- Memuat ekstensi Telescope
 pcall(function()
