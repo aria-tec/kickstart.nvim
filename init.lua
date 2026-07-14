@@ -456,6 +456,7 @@ do
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
       { '<leader>p', group = '[P]lugin' },
       { '<leader>n', group = '[N]pm / Packages' },
+      { '<leader>u', group = '[U]ndo / History' },
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
