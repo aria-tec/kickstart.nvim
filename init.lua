@@ -457,6 +457,7 @@ do
       { '<leader>p', group = '[P]lugin' },
       { '<leader>n', group = '[N]pm / Packages' },
       { '<leader>u', group = '[U]ndo / History' },
+      { '<leader>d', group = '[D]ocumentation' },
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
