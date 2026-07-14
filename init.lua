@@ -1089,6 +1089,8 @@ do
   local function treesitter_try_attach(buf, language)
     -- Check if a parser exists and load it
     if not vim.treesitter.language.add(language) then return end
+    -- Jangan aktifkan Treesitter untuk template chezmoi agar visual template gabungan tidak rusak
+    if string.find(vim.bo[buf].filetype, 'chezmoitmpl') then return end
     -- Enable syntax highlighting and other treesitter features
     vim.treesitter.start(buf, language)
 
