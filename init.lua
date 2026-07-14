@@ -174,6 +174,7 @@ do
 
   -- [[ Custom Options ]]
   -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
+  vim.o.relativenumber = true
 
   -- Pengaturan Indentasi & Tab (sesuai .stylua.toml)
   vim.o.expandtab = true -- Mengubah karakter tab menjadi spasi
@@ -874,6 +875,8 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'markdownlint',
+    'phpcs',
     'prettierd',
     'prettier',
     'pint',
