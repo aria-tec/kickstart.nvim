@@ -421,20 +421,20 @@ do
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
   require('guess-indent').setup {}
 
-  -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
+  -- [[ Gitsigns ]]
+  -- NOTIF: Konfigurasi gitsigns bawaan di bawah ini dikomentari karena disatukan secara modular
+  -- ke dalam berkas import: lua/kickstart/plugins/gitsigns.lua
   --
-  -- See `:help gitsigns` to understand what each configuration key does.
-  -- Adds git related signs to the gutter, as well as utilities for managing changes
-  vim.pack.add { gh 'lewis6991/gitsigns.nvim' }
-  require('gitsigns').setup {
-    signs = {
-      add = { text = '+' }, ---@diagnostic disable-line: missing-fields
-      change = { text = '~' }, ---@diagnostic disable-line: missing-fields
-      delete = { text = '_' }, ---@diagnostic disable-line: missing-fields
-      topdelete = { text = '‾' }, ---@diagnostic disable-line: missing-fields
-      changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
-    },
-  }
+  -- vim.pack.add { gh 'lewis6991/gitsigns.nvim' }
+  -- require('gitsigns').setup {
+  --   signs = {
+  --     add = { text = '+' }, ---@diagnostic disable-line: missing-fields
+  --     change = { text = '~' }, ---@diagnostic disable-line: missing-fields
+  --     delete = { text = '_' }, ---@diagnostic disable-line: missing-fields
+  --     topdelete = { text = '‾' }, ---@diagnostic disable-line: missing-fields
+  --     changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
+  --   },
+  -- }
 
   -- Useful plugin to show you pending keybinds.
   vim.pack.add { gh 'folke/which-key.nvim' }
@@ -447,6 +447,7 @@ do
       { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
+      { '<leader>p', group = '[P]lugin' },
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
