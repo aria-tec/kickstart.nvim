@@ -175,6 +175,7 @@ do
   -- [[ Custom Options ]]
   -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
   vim.o.relativenumber = true
+  vim.o.cmdheight = 0
 
   -- Pengaturan Indentasi & Tab (sesuai .stylua.toml)
   vim.o.expandtab = true -- Mengubah karakter tab menjadi spasi
@@ -892,6 +893,7 @@ do
     'prettier',
     'pint',
     'blade-formatter',
+    'emmet-language-server',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
