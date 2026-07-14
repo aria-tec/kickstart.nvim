@@ -176,15 +176,15 @@ do
   -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
 
   -- Pengaturan Indentasi & Tab (sesuai .stylua.toml)
-  vim.o.expandtab = true        -- Mengubah karakter tab menjadi spasi
-  vim.o.shiftwidth = 2          -- Lebar spasi untuk setiap level indentasi
-  vim.o.tabstop = 2             -- Lebar representasi visual karakter Tab
-  vim.o.softtabstop = 2         -- Lebar indentasi saat menekan Tab/Backspace
-  vim.o.smartindent = true      -- Indentasi cerdas otomatis untuk baris baru
+  vim.o.expandtab = true -- Mengubah karakter tab menjadi spasi
+  vim.o.shiftwidth = 2 -- Lebar spasi untuk setiap level indentasi
+  vim.o.tabstop = 2 -- Lebar representasi visual karakter Tab
+  vim.o.softtabstop = 2 -- Lebar indentasi saat menekan Tab/Backspace
+  vim.o.smartindent = true -- Indentasi cerdas otomatis untuk baris baru
 
   -- Perilaku mode Visual Block dan scroll horizontal
-  vim.o.virtualedit = 'block'   -- Mengizinkan kursor bergerak ke kolom kosong pada mode Visual Block
-  vim.o.sidescrolloff = 8       -- Jumlah kolom minimal di kiri dan kanan kursor saat scroll horizontal
+  vim.o.virtualedit = 'block' -- Mengizinkan kursor bergerak ke kolom kosong pada mode Visual Block
+  vim.o.sidescrolloff = 8 -- Jumlah kolom minimal di kiri dan kanan kursor saat scroll horizontal
 
   -- Konfigurasi Autocomplete Pop-up
   vim.o.completeopt = 'menu,menuone,noselect' -- Menghindari auto-select sebelum memilih eksplisit
@@ -293,9 +293,7 @@ do
   vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase window width' })
 
   -- Toggle diagnostics aktif/nonaktif
-  vim.keymap.set('n', '<leader>td', function()
-    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-  end, { desc = '[T]oggle [D]iagnostics' })
+  vim.keymap.set('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = '[T]oggle [D]iagnostics' })
 end
 
 -- ============================================================
@@ -368,10 +366,7 @@ do
 
   -- :PackClean command to remove inactive plugins
   vim.api.nvim_create_user_command('PackClean', function()
-    local inactive = vim.iter(vim.pack.get())
-      :filter(function(x) return not x.active end)
-      :map(function(x) return x.spec.name end)
-      :totable()
+    local inactive = vim.iter(vim.pack.get()):filter(function(x) return not x.active end):map(function(x) return x.spec.name end):totable()
 
     if #inactive == 0 then
       vim.notify('No inactive plugins found to clean.', vim.log.levels.INFO)
@@ -624,13 +619,18 @@ do
   -- [[ Custom Telescope Keymaps ]]
   -- Pemetaan tombol Telescope kustom tambahan (Kustomisasi Pengguna)
   vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
-  vim.keymap.set('n', '<leader>sa', function()
-    builtin.find_files {
-      no_ignore = true,
-      hidden = true,
-      prompt_title = 'Search All Files (Including Ignored)',
-    }
-  end, { desc = '[S]earch [A]ll Files' })
+  vim.keymap.set(
+    'n',
+    '<leader>sa',
+    function()
+      builtin.find_files {
+        no_ignore = true,
+        hidden = true,
+        prompt_title = 'Search All Files (Including Ignored)',
+      }
+    end,
+    { desc = '[S]earch [A]ll Files' }
+  )
 
   -- Add Telescope-based LSP pickers when an LSP attaches to a buffer.
   -- If you later switch picker plugins, this is where to update these mappings.
@@ -1035,9 +1035,25 @@ do
 
   -- Ensure basic parsers are installed
   local parsers = {
-    'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+    'bash',
+    'c',
+    'diff',
+    'html',
+    'lua',
+    'luadoc',
+    'markdown',
+    'markdown_inline',
+    'query',
+    'vim',
+    'vimdoc',
     -- Web Development
-    'javascript', 'typescript', 'tsx', 'php', 'phpdoc', 'css', 'json',
+    'javascript',
+    'typescript',
+    'tsx',
+    'php',
+    'phpdoc',
+    'css',
+    'json',
   }
   require('nvim-treesitter').install(parsers)
 
@@ -1105,13 +1121,13 @@ do
   require 'kickstart.plugins.indent_line'
   require 'kickstart.plugins.lint'
   require 'kickstart.plugins.autopairs'
-  require 'kickstart.plugins.neo-tree'
+  -- require 'kickstart.plugins.neo-tree'
   require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- require 'custom.plugins'
+  require 'custom.plugins'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
