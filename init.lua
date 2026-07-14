@@ -954,8 +954,8 @@ do
   --    See the README about individual language/framework/plugin snippets:
   --    https://github.com/rafamadriz/friendly-snippets
   --
-  -- vim.pack.add { gh 'rafamadriz/friendly-snippets' }
-  -- require('luasnip.loaders.from_vscode').lazy_load()
+  vim.pack.add { gh 'rafamadriz/friendly-snippets' }
+  require('luasnip.loaders.from_vscode').lazy_load()
 
   -- [[ Autocomplete Engine ]]
   vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }
@@ -997,7 +997,7 @@ do
     completion = {
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
 
     sources = {
@@ -1034,7 +1034,11 @@ do
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
   -- Ensure basic parsers are installed
-  local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+  local parsers = {
+    'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+    -- Web Development
+    'javascript', 'typescript', 'tsx', 'php', 'phpdoc', 'css', 'json',
+  }
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer
@@ -1047,6 +1051,7 @@ do
 
     -- Enable treesitter based folds
     -- For more info on folds see `:help folds`
+    -- TIP: Set `vim.o.foldlevelstart = 99` in SECTION 1 to prevent auto-closing folds on file open
     -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
     -- vim.wo.foldmethod = 'expr'
 
