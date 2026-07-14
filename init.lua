@@ -362,6 +362,36 @@ do
       end
     end,
   })
+
+  -- [[ Custom Plugin Manager Utilities ]]
+  -- Shortcuts and helper commands for managing plugins (vim.pack)
+
+  -- :PackClean command to remove inactive plugins
+  vim.api.nvim_create_user_command('PackClean', function()
+    local inactive = vim.iter(vim.pack.get())
+      :filter(function(x) return not x.active end)
+      :map(function(x) return x.spec.name end)
+      :totable()
+
+    if #inactive == 0 then
+      vim.notify('No inactive plugins found to clean.', vim.log.levels.INFO)
+      return
+    end
+
+    vim.ui.select(inactive, {
+      prompt = 'Select plugin to delete from disk:',
+    }, function(choice)
+      if choice then
+        vim.pack.del({ choice }, { force = true })
+        vim.notify('Successfully deleted plugin: ' .. choice, vim.log.levels.INFO)
+      end
+    end)
+  end, { desc = 'Remove inactive plugins from disk' })
+
+  -- Keymaps for easier updates, status checks, and cleanups
+  vim.keymap.set('n', '<leader>pu', '<cmd>lua vim.pack.update()<CR>', { desc = '[P]lugin [U]pdate' })
+  vim.keymap.set('n', '<leader>ps', '<cmd>lua vim.pack.update(nil, { offline = true })<CR>', { desc = '[P]lugin [S]tatus (Offline)' })
+  vim.keymap.set('n', '<leader>pc', '<cmd>PackClean<CR>', { desc = '[P]lugin [C]lean' })
 end
 
 ---Because most plugins are hosted on GitHub, you can use the helper
