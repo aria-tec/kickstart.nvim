@@ -7,7 +7,7 @@ vim.pack.add { 'https://github.com/danymat/neogen' }
 require('neogen').setup {
   enabled = true,
   input_after_comment = true, -- Masuk ke mode insert setelah anotasi disisipkan
-  snippet_engine = 'nvim', -- Menggunakan engine snippet bawaan Neovim 0.10+ / 0.11+
+  snippet_engine = 'luasnip', -- Menggunakan engine snippet LuaSnip yang terpasang di sistem
 }
 
 -- [[ Keymaps ]]
