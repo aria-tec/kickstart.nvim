@@ -576,6 +576,28 @@ do
     --   },
     -- },
     -- pickers = {}
+
+    -- [[ Custom Telescope Options ]]
+    -- Kustomisasi opsional Telescope (Silakan aktifkan jika suka)
+    defaults = {
+      sorting_strategy = 'ascending',
+      layout_config = {
+        prompt_position = 'top',
+      },
+      mappings = {
+        i = {
+          ['<C-k>'] = require('telescope.actions').move_selection_previous,
+          ['<C-j>'] = require('telescope.actions').move_selection_next,
+        },
+      },
+    },
+    pickers = {
+      find_files = {
+        hidden = true,
+        find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+      },
+    },
+
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
     },
@@ -598,6 +620,17 @@ do
   vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
   vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
   vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+  -- [[ Custom Telescope Keymaps ]]
+  -- Pemetaan tombol Telescope kustom tambahan (Kustomisasi Pengguna)
+  vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
+  vim.keymap.set('n', '<leader>sa', function()
+    builtin.find_files {
+      no_ignore = true,
+      hidden = true,
+      prompt_title = 'Search All Files (Including Ignored)',
+    }
+  end, { desc = '[S]earch [A]ll Files' })
 
   -- Add Telescope-based LSP pickers when an LSP attaches to a buffer.
   -- If you later switch picker plugins, this is where to update these mappings.
