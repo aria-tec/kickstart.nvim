@@ -7,7 +7,7 @@ vim.pack.add { 'https://github.com/brianhuster/live-preview.nvim' }
 require('livepreview.config').set({
   port = 5500,
   browser = 'default',
-  dynamic_root = false,
+  dynamic_root = true, -- Gunakan direktori file saat ini sebagai root server (mencegah 404)
   sync_scroll = true,
   picker = 'telescope', -- Gunakan Telescope sebagai pemilih file pratinjau
   address = '127.0.0.1',
