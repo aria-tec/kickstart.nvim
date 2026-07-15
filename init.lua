@@ -852,7 +852,8 @@ do
     },
     html = {},
     cssls = {},
-
+    typos_lsp = {},
+    harper_ls = {},
     stylua = {}, -- Used to format Lua code
 
     -- Special Lua Config, as recommended by neovim help docs
