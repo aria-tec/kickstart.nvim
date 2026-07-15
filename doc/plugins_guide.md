@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 44 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **44 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -13,7 +13,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
 8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
-9. [Estetika & Antarmuka UI (5 Plugin)](#9-estetika--antarmuka-ui-5-plugin)
+9. [Estetika & Antarmuka UI (4 Plugin)](#9-estetika--antarmuka-ui-4-plugin)
 
 ---
 
@@ -164,12 +164,10 @@ Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar le
 
 ---
 
-## 9. Estetika & Antarmuka UI (5 Plugin)
+## 9. Estetika & Antarmuka UI (4 Plugin)
 
 Plugin yang menentukan keindahan visual editor, palet warna, dan tata letak jendela.
 
-*   ### [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-    *   **Fungsi:** Skema warna (*colorscheme*) utama Anda yang sangat estetik dan modern dengan nuansa malam hari di Tokyo.
 *   ### [edgy.nvim](https://github.com/folke/edgy.nvim)
     *   **Fungsi:** Pengatur tata letak jendela tepi (edgebar). Merapikan penempatan panel bantuan `:help`, `undotree`, dan daftar `quickfix` di tepi layar secara konsisten tanpa mengacaukan split editor utama Anda.
 *   ### [fidget.nvim](https://github.com/j-hui/fidget.nvim)
