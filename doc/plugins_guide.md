@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 44 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **44 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -11,7 +11,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 4. [Formatting & Linting (2 Plugin)](#4-formatting--linting-2-plugin)
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
-7. [Integrasi TypeScript & Web Dev (5 Plugin)](#7-integrasi-typescript--web-dev-5-plugin)
+7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
 8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
 9. [Estetika & Antarmuka UI (5 Plugin)](#9-estetika--antarmuka-ui-5-plugin)
 
@@ -124,7 +124,7 @@ Plugin yang mempermudah pergerakan kursor, perpindahan antar berkas, dan pencari
 
 ---
 
-## 7. Integrasi TypeScript & Web Dev (5 Plugin)
+## 7. Integrasi TypeScript & Web Dev (6 Plugin)
 
 Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScript, React, Next.js, dan dotfiles.
 
@@ -138,6 +138,8 @@ Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScrip
     *   **Fungsi:** Integrasi pengerjaan dotfiles yang dikelola oleh `chezmoi`. Menyelesaikan nama file terenkripsi/terkompresi chezmoi secara otomatis agar Neovim dapat mewarnai file tersebut dengan benar.
 *   ### [emmet.lua](file:///home/arias/.config/kickstart.nvim/lua/custom/plugins/emmet.lua) (Modul Setup LSP)
     *   **Fungsi:** Walau dikonfigurasi secara manual, `emmet_language_server` (terpasang via Mason) memotong pengetikan HTML/CSS/JSX dengan singkatan Emmet berkecepatan tinggi.
+*   ### [live-preview.nvim](https://github.com/brianhuster/live-preview.nvim)
+    *   **Fungsi:** Memungkinkan pratinjau langsung file Markdown dan HTML secara dinamis di peramban (browser) web default, lengkap dengan sinkronisasi gulir layar (*sync scroll*).
 
 ---
 
