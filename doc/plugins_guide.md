@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 42 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **42 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -12,7 +12,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
-8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
+8. [Perilaku Editor & Utilitas Cerdas (6 Plugin)](#8-perilaku-editor--utilitas-cerdas-6-plugin)
 9. [Estetika & Antarmuka UI (4 Plugin)](#9-estetika--antarmuka-ui-4-plugin)
 
 ---
@@ -143,7 +143,7 @@ Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScrip
 
 ---
 
-## 8. Perilaku Editor & Utilitas Cerdas (7 Plugin)
+## 8. Perilaku Editor & Utilitas Cerdas (6 Plugin)
 
 Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar lebih modern.
 
@@ -155,8 +155,6 @@ Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar le
     *   **Fungsi:** Menampilkan tanda garis hijau/kuning/merah di margin samping editor untuk menunjukkan baris kode yang ditambah/diubah/dihapus dibandingkan dengan repositori Git, serta navigasi antar hunk.
 *   ### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
     *   **Fungsi:** Menelusuri seluruh baris komentar bertanda khusus (`TODO`, `FIXME`, `BUG`) dalam proyek dan menampilkannya di panel interaktif Telescope.
-*   ### [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-    *   **Fungsi:** Menampilkan garis vertikal penanda batas indentasi blok kode agar mempermudah membaca batas kurung kurawal.
 *   ### [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim)
     *   **Fungsi:** Melatih memori otot Anda agar menggunakan gerakan Vim yang efisien (seperti melarang penekanan berulang-ulang tombol `h`/`j`/`k`/`l` atau menyarankan pemakaian tombol pintas yang lebih optimal).
 *   ### [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
@@ -174,6 +172,8 @@ Plugin yang menentukan keindahan visual editor, palet warna, dan tata letak jend
     *   **Fungsi:** (Terduplikasi sebagai visualizer kemajuan LSP) Menyajikan notifikasi mengambang yang halus di pojok kanan bawah.
 *   ### [mini.icons] (Modul dari mini.nvim)
     *   **Fungsi:** Menyediakan ikon grafis modern untuk file, folder, dan symbol jika Anda menggunakan Nerd Font.
+*   ### [mini.indentscope] (Modul dari mini.nvim)
+    *   **Fungsi:** Menampilkan garis vertikal dinamis dan animasi penunjuk ruang lingkup indentasi (*indent scope*) aktif saat ini secara cerdas.
 *   ### [git-signs-highlights] (Integrasi Gitsigns)
     *   **Fungsi:** Memberikan warna highlight halus pada nomor baris di samping kiri layar yang mengalami perubahan git.
 

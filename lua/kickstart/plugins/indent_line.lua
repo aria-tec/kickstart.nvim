@@ -1,6 +1,7 @@
--- Add indentation guides even on blank lines
+-- Enable `mini.indentscope`
+-- See `:help mini.indentscope` or `:help MiniIndentscope`
+require('mini.indentscope').setup {
+  symbol = '│',
+  options = { try_as_border = true },
+}
 
--- Enable `lukas-reineke/indent-blankline.nvim`
--- See `:help ibl`
-vim.pack.add { 'https://github.com/lukas-reineke/indent-blankline.nvim' }
-require('ibl').setup {}
