@@ -176,6 +176,7 @@ do
   -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
   vim.o.relativenumber = true
   vim.o.cmdheight = 0
+  vim.opt.clipboard = 'unnamedplus'
 
   -- Pengaturan Indentasi & Tab (sesuai .stylua.toml)
   vim.o.expandtab = true -- Mengubah karakter tab menjadi spasi
@@ -472,7 +473,7 @@ do
   -- -- require('kanagawa').setup {
   -- --   theme = 'dragon',
   -- -- }
-  -- vim.cmd.colorscheme 'kanagawa-dragon'
+  -- vim.cmd.colorscheme 'ron'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
