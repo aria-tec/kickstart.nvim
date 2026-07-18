@@ -37,3 +37,25 @@ require('inc_rename').setup {}
 vim.keymap.set('n', 'grn', function()
   return ':IncRename ' .. vim.fn.expand('<cword>')
 end, { expr = true, desc = '[R]e[n]ame (incremental)' })
+
+-- 4. leetcode.nvim
+-- Membantu menyelesaikan soal-soal LeetCode langsung di dalam Neovim
+vim.pack.add {
+  'https://github.com/MunifTanjim/nui.nvim',
+  'https://github.com/kawre/leetcode.nvim',
+}
+
+require('leetcode').setup {
+  arg = 'leetcode.nvim',
+  lang = 'cpp', -- Bahasa pemrograman default (bisa diubah sesuai preferensi)
+}
+
+-- 5. mini.operators
+-- Operator pengeditan teks pintar (evaluate, exchange, multiply, replace, sort)
+require('mini.operators').setup()
+
+-- Keymap untuk menukar argumen bersebelahan (swap adjacent arguments)
+-- Memerlukan `a` argument textobject dari 'mini.ai'
+vim.keymap.set('n', '(', 'gxiagxila', { remap = true, desc = 'Swap arg left' })
+vim.keymap.set('n', ')', 'gxiagxina', { remap = true, desc = 'Swap arg right' })
+

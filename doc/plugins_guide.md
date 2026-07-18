@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 44 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **44 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -12,7 +12,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
-8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
+8. [Perilaku Editor & Utilitas Cerdas (8 Plugin)](#8-perilaku-editor--utilitas-cerdas-8-plugin)
 9. [Estetika & Antarmuka UI (4 Plugin)](#9-estetika--antarmuka-ui-4-plugin)
 
 ---
@@ -27,6 +27,7 @@ Bagian ini memuat library fundamental dan pengelola ekosistem Neovim yang menyok
         *   `mini.surround`: Menambah/mengubah/menghapus kurung atau kutip penutup secara cepat (`ys`, `ds`, `cs`).
         *   `mini.statusline`: Menyediakan bilah status minimalis di bagian bawah editor.
         *   `mini.files`: Penjelajah berkas berbasis kolom (Miller columns) yang memungkinkan navigasi dan manipulasi sistem file dengan mengedit teks biasa.
+        *   `mini.operators`: Menyediakan operator teks tambahan untuk mengevaluasi, menukar, menduplikasi, mengganti, dan mengurutkan teks.
 *   ### [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
     *   **Fungsi:** Library utilitas fungsi Lua (seperti penanganan file asinkron, pemformatan string, job controller) yang wajib dimiliki untuk menjalankan Telescope, Gitsigns, dan banyak plugin lainnya.
 *   ### [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
@@ -144,7 +145,7 @@ Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScrip
 
 ---
 
-## 8. Perilaku Editor & Utilitas Cerdas (7 Plugin)
+## 8. Perilaku Editor & Utilitas Cerdas (8 Plugin)
 
 Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar lebih modern.
 
@@ -157,11 +158,13 @@ Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar le
 *   ### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
     *   **Fungsi:** Menelusuri seluruh baris komentar bertanda khusus (`TODO`, `FIXME`, `BUG`) dalam proyek dan menampilkannya di panel interaktif Telescope.
 *   ### [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim)
-    *   **Fungsi:** Melatih memori otot Anda agar menggunakan gerakan Vim yang efisien (seperti melarang penekanan berulang-ulang tombol `h`/`j`/`k`/`l` atau menyarankan pemakaian tombol pintas yang lebih optimal).
+    *   **Fungsi:** Melatih memori otot Anda agar menggunakan gerakan Vim yang efisien (seperti melarang penekanan berulang-ulang tombol `h`/`j`/`k`/`l` or menyarankan pemakaian tombol pintas yang lebih optimal).
 *   ### [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
     *   **Fungsi:** (Terduplikasi di lockfile sebagai dependensi) Library UI komponen modular yang krusial untuk package-info dan plugin dialog lainnya.
 *   ### [leetcode.nvim](https://github.com/kawre/leetcode.nvim)
     *   **Fungsi:** Memungkinkan penyelesaian soal-soal LeetCode langsung di dalam Neovim. Menyediakan dasbor interaktif, pewarnaan deskripsi soal yang rapi (menggunakan Tree-sitter HTML), statistik profil, serta perintah `:Leet` untuk navigasi, pengujian (`:Leet run`), dan pengumpulan jawaban (`:Leet submit`).
+*   ### [mini.operators] (Modul dari mini.nvim)
+    *   **Fungsi:** Menyediakan operator baru untuk mengedit teks secara efisien: `g=` (evaluate), `gx` (exchange/tukar posisi teks), `gm` (multiply/duplikasi teks), `gr` (replace dengan register), dan `gs` (sort/urutkan teks). Mendukung dot-repeat dan hitungan `[count]`.
 
 ---
 
