@@ -1,6 +1,6 @@
-# Panduan Lengkap: Fungsi & Peran 42 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 43 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **42 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **43 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
 
 ---
 
@@ -12,7 +12,7 @@ Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dar
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
-8. [Perilaku Editor & Utilitas Cerdas (6 Plugin)](#8-perilaku-editor--utilitas-cerdas-6-plugin)
+8. [Perilaku Editor & Utilitas Cerdas (7 Plugin)](#8-perilaku-editor--utilitas-cerdas-7-plugin)
 9. [Estetika & Antarmuka UI (4 Plugin)](#9-estetika--antarmuka-ui-4-plugin)
 
 ---
@@ -26,6 +26,7 @@ Bagian ini memuat library fundamental dan pengelola ekosistem Neovim yang menyok
         *   `mini.ai`: Meningkatkan fungsionalitas seleksi teks objek (`a` dan `i` keys).
         *   `mini.surround`: Menambah/mengubah/menghapus kurung atau kutip penutup secara cepat (`ys`, `ds`, `cs`).
         *   `mini.statusline`: Menyediakan bilah status minimalis di bagian bawah editor.
+        *   `mini.files`: Penjelajah berkas berbasis kolom (Miller columns) yang memungkinkan navigasi dan manipulasi sistem file dengan mengedit teks biasa.
 *   ### [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
     *   **Fungsi:** Library utilitas fungsi Lua (seperti penanganan file asinkron, pemformatan string, job controller) yang wajib dimiliki untuk menjalankan Telescope, Gitsigns, dan banyak plugin lainnya.
 *   ### [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
@@ -113,8 +114,8 @@ Plugin yang mempermudah pergerakan kursor, perpindahan antar berkas, dan pencari
     *   **Fungsi:** Algoritma pencarian fuzzy C-porting cepat untuk membuat penyaringan hasil di Telescope berjalan instan tanpa lag.
 *   ### [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
     *   **Fungsi:** Mengambil alih antarmuka menu seleksi bawaan Neovim (seperti `vim.ui.select` untuk Code Actions LSP) dan menampilkannya di dalam pop-up visual Telescope yang elegan.
-*   ### [oil.nvim](https://github.com/stevearc/oil.nvim)
-    *   **Fungsi:** Penjelajah file (file explorer) inovatif berbasis buffer teks. Memungkinkan Anda membuat, menghapus, menyalin, dan memindahkan berkas secara instan hanya dengan mengedit nama berkas seperti teks biasa (pemicu: `-`).
+*   ### [mini.files] (Modul dari mini.nvim)
+    *   **Fungsi:** Penjelajah berkas berbasis kolom (Miller columns) yang sangat cepat. Memungkinkan Anda melakukan navigasi struktur direktori secara visual serta melakukan manipulasi file (buat, hapus, ganti nama, salin, dan pindahkan) secara langsung dengan mengedit buffer teks, lalu menyinkronkannya menggunakan tombol `=` (pemicu toggle: `\`).
 *   ### [flash.nvim](https://github.com/folke/flash.nvim)
     *   **Fungsi:** Lompatan kursor super cepat di seluruh layar menggunakan penanda huruf unik (pemicu tombol: `s` atau `S`).
 *   ### [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
@@ -143,7 +144,7 @@ Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScrip
 
 ---
 
-## 8. Perilaku Editor & Utilitas Cerdas (6 Plugin)
+## 8. Perilaku Editor & Utilitas Cerdas (7 Plugin)
 
 Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar lebih modern.
 
@@ -159,6 +160,8 @@ Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar le
     *   **Fungsi:** Melatih memori otot Anda agar menggunakan gerakan Vim yang efisien (seperti melarang penekanan berulang-ulang tombol `h`/`j`/`k`/`l` atau menyarankan pemakaian tombol pintas yang lebih optimal).
 *   ### [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
     *   **Fungsi:** (Terduplikasi di lockfile sebagai dependensi) Library UI komponen modular yang krusial untuk package-info dan plugin dialog lainnya.
+*   ### [leetcode.nvim](https://github.com/kawre/leetcode.nvim)
+    *   **Fungsi:** Memungkinkan penyelesaian soal-soal LeetCode langsung di dalam Neovim. Menyediakan dasbor interaktif, pewarnaan deskripsi soal yang rapi (menggunakan Tree-sitter HTML), statistik profil, serta perintah `:Leet` untuk navigasi, pengujian (`:Leet run`), dan pengumpulan jawaban (`:Leet submit`).
 
 ---
 
