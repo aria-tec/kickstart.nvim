@@ -25,7 +25,7 @@ Bagian ini memuat library fundamental dan pengelola ekosistem Neovim yang menyok
     *   **Fungsi:** Library modular serbaguna yang sangat cepat. Pada Kickstart Anda, modul ini digunakan untuk:
         *   `mini.ai`: Meningkatkan fungsionalitas seleksi teks objek (`a` dan `i` keys).
         *   `mini.surround`: Menambah/mengubah/menghapus kurung atau kutip penutup secara cepat (`ys`, `ds`, `cs`).
-        *   `mini.statusline`: Menyediakan bilah status minimalis di bagian bawah editor.
+        *   `mini.statusline`: *(Dinonaktifkan / Dikomentari)* Menyediakan bilah status minimalis di bagian bawah editor (digantikan oleh `heirline.nvim`).
         *   `mini.files`: Penjelajah berkas berbasis kolom (Miller columns) yang memungkinkan navigasi dan manipulasi sistem file dengan mengedit teks biasa.
         *   `mini.operators`: Menyediakan operator teks tambahan untuk mengevaluasi, menukar, menduplikasi, mengganti, dan mengurutkan teks.
         *   `mini.visits`: Melacak dan menggunakan kembali riwayat kunjungan berkas/direktori secara persisten.
@@ -172,10 +172,18 @@ Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar le
 
 ---
 
-## 9. Estetika & Antarmuka UI (5 Plugin)
+## 9. Estetika & Antarmuka UI (6 Plugin)
 
 Plugin yang menentukan keindahan visual editor, palet warna, dan tata letak jendela.
 
+*   ### [heirline.nvim](https://github.com/rebelot/heirline.nvim)
+    *   **Fungsi:** Framework statusline Neovim yang sangat cepat dan modular untuk merancang statusline kustom. Pada Kickstart Anda, statusline ini diatur dengan palet warna kustom dan menampilkan informasi berikut secara real-time:
+        *   **ViMode**: Indikator mode Neovim saat ini (NORMAL, INSERT, VISUAL, dll.) dengan pewarnaan dinamis.
+        *   **File Name Block**: Nama berkas yang sedang dibuka, ikon jenis file, serta indikator modifikasi (`[+]`) dan status read-only (``).
+        *   **Git Integration**: Informasi cabang (branch) Git yang aktif beserta statistik jumlah baris yang ditambahkan, dihapus, atau diubah (`+`/`-`/`~`) dari `gitsigns`.
+        *   **Diagnostics**: Indikator kesalahan (errors), peringatan (warnings), informasi, dan petunjuk (hints) dari LSP.
+        *   **LSP Active**: Daftar nama server bahasa (LSP) yang sedang aktif menempel pada dokumen tersebut.
+        *   **File Type, Ruler & ScrollBar**: Menunjukkan tipe file, posisi kursor saat ini (baris:kolom), dan indikator kemajuan gulir halaman berupa bar visual yang bergerak naik-turun.
 *   ### [edgy.nvim](https://github.com/folke/edgy.nvim)
     *   **Fungsi:** Pengatur tata letak jendela tepi (edgebar). Merapikan penempatan panel bantuan `:help`, `undotree`, dan daftar `quickfix` di tepi layar secara konsisten tanpa mengacaukan split editor utama Anda.
 *   ### [fidget.nvim](https://github.com/j-hui/fidget.nvim)
