@@ -59,3 +59,11 @@ require('mini.operators').setup()
 vim.keymap.set('n', '(', 'gxiagxila', { remap = true, desc = 'Swap arg left' })
 vim.keymap.set('n', ')', 'gxiagxina', { remap = true, desc = 'Swap arg right' })
 
+-- 6. mini.visits
+-- Melacak dan menggunakan kembali riwayat kunjungan berkas/direktori secara persisten
+require('mini.visits').setup()
+
+-- 7. mini.starter
+-- Halaman awal (start screen) Neovim yang interaktif saat dibuka tanpa argumen
+require('mini.starter').setup()
+
