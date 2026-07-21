@@ -110,7 +110,7 @@ do
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
+  vim.o.relativenumber = false
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
@@ -174,7 +174,8 @@ do
 
   -- [[ Custom Options ]]
   -- Konfigurasi tambahan khusus (Kustomisasi Pengguna)
-  vim.o.relativenumber = true
+  vim.o.hlsearch = true
+  vim.o.incsearch = true
   vim.o.cmdheight = 1
   vim.opt.clipboard = 'unnamedplus'
   vim.opt.ruler = true
@@ -293,8 +294,8 @@ do
   -- mengalihkannya ke berkas modular `lua/custom/plugins/hlslens.lua`
   -- agar terintegrasi penuh dengan tampilan visual indeks nvim-hlslens.
   --
-  -- vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Search next and center cursor' })
-  -- vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Search previous and center cursor' })
+  vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Search next and center cursor' })
+  vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Search previous and center cursor' })
 
   -- Menjaga seleksi visual tetap aktif saat indentasi
   vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and keep selection' })
