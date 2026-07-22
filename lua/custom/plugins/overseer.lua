@@ -54,7 +54,43 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- 5. Keymaps
+-- 5. Mini.Starter Dashboard Setup (Similar to vim-startify with Resession Sessions Integration)
+local ok_starter, starter = pcall(require, 'mini.starter')
+if ok_starter then
+  local resession_section = function()
+    local items = {}
+    local ok_res, resession = pcall(require, 'resession')
+    if ok_res then
+      for _, name in ipairs(resession.list()) do
+        table.insert(items, {
+          name = '󰆓 ' .. name,
+          action = function()
+            resession.load(name)
+          end,
+          section = 'Sessions (Resession)',
+        })
+      end
+    end
+    return items
+  end
+
+  starter.setup {
+    evaluate_single = true,
+    items = {
+      starter.sections.builtin_actions(),
+      starter.sections.recent_files(10, false),
+      starter.sections.recent_files(10, true),
+      resession_section,
+    },
+    content_hooks = {
+      starter.gen_hook.adding_bullet(),
+      starter.gen_hook.indexing('all', { 'Builtin actions' }),
+      starter.gen_hook.aligning('center', 'center'),
+    },
+  }
+end
+
+-- 6. Keymaps
 -- Overseer Keymaps
 vim.keymap.set('n', '<leader>or', '<cmd>OverseerRun<cr>', { desc = '[O]verseer [R]un Task' })
 vim.keymap.set('n', '<leader>oc', '<cmd>OverseerShell<cr>', { desc = '[O]verseer Run [C]ustom Command' })
