@@ -54,34 +54,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- 5. Dynamic Heirline Integration Helpers (Exposed for Statusline)
-_G.OverseerStatus = function()
-  if not package.loaded.overseer then return '' end
-  local tasks = require('overseer.task_list').list_tasks { unique = true, include_ephemeral = true }
-  local tasks_by_status = require('overseer.util').tbl_group_by(tasks, 'status')
-  local symbols = {
-    ['CANCELED'] = ' ',
-    ['FAILURE'] = '󰅚 ',
-    ['SUCCESS'] = '󰄴 ',
-    ['RUNNING'] = '󰑮 ',
-  }
-  local parts = {}
-  for status, symbol in pairs(symbols) do
-    local t = tasks_by_status[status]
-    if t and #t > 0 then table.insert(parts, string.format('%s%d', symbol, #t)) end
-  end
-  if #parts == 0 then return '' end
-  return ' ' .. table.concat(parts, ' ') .. ' '
-end
-
-_G.ResessionStatus = function()
-  if not package.loaded.resession then return '' end
-  local name = require('resession').get_current()
-  if not name or name == '' then return '' end
-  return ' 󰆓 [' .. name .. '] '
-end
-
--- 6. Keymaps
+-- 5. Keymaps
 -- Overseer Keymaps
 vim.keymap.set('n', '<leader>or', '<cmd>OverseerRun<cr>', { desc = '[O]verseer [R]un Task' })
 vim.keymap.set('n', '<leader>oc', '<cmd>OverseerShell<cr>', { desc = '[O]verseer Run [C]ustom Command' })
@@ -91,7 +64,16 @@ vim.keymap.set('n', '<leader>ot', '<cmd>OverseerToggle<cr>', { desc = '[O]versee
 vim.keymap.set('n', '<leader>oa', '<cmd>OverseerTaskAction<cr>', { desc = '[O]verseer Task [A]ction' })
 vim.keymap.set('n', '<leader>oi', '<cmd>OverseerInfo<cr>', { desc = '[O]verseer [I]nfo' })
 
--- Resession Keymaps
-vim.keymap.set('n', '<leader>ss', resession.save, { desc = '[S]ession [S]ave' })
-vim.keymap.set('n', '<leader>sl', resession.load, { desc = '[S]ession [L]oad' })
-vim.keymap.set('n', '<leader>sd', resession.delete, { desc = '[S]ession [D]elete' })
+-- Resession Keymaps (Menggunakan <leader>S kapital untuk menghindari bentrokan dengan Telescope <leader>s [S]earch)
+vim.keymap.set('n', '<leader>Ss', resession.save, { desc = '[S]ession [S]ave' })
+vim.keymap.set('n', '<leader>Sl', resession.load, { desc = '[S]ession [L]oad' })
+vim.keymap.set('n', '<leader>Sd', resession.delete, { desc = '[S]ession [D]elete' })
+
+-- Registrasi grup Which-Key untuk Session & Overseer
+local ok_wk, wk = pcall(require, 'which-key')
+if ok_wk then
+  wk.add {
+    { '<leader>S', group = '[S]ession' },
+    { '<leader>o', group = '[O]verseer Tasks' },
+  }
+end
