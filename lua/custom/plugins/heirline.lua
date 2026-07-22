@@ -632,7 +632,7 @@ local TerminalStatusline = {
   condition = function()
     return conditions.buffer_matches({ buftype = { "terminal" } })
   end,
-  hl = { bg = "dark-red", fg = "fg-main" },
+  hl = { bg = "bg-red-subtle", fg = "fg-main" },
   { condition = conditions.is_active, ViMode, Space },
   FileType, Space,
   FileNameBlock,
