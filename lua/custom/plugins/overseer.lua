@@ -12,11 +12,13 @@ overseer.setup {
   templates = { 'builtin' },
 }
 
--- 3. Resession Setup (with Overseer Extension integration)
+-- 3. Resession Setup (with Overseer Extension integration for task history)
 local resession = require 'resession'
 resession.setup {
   extensions = {
-    overseer = {},
+    overseer = {
+      include_ephemeral = true, -- Simpan seluruh riwayat task (selesai, gagal, ephemeral) ke dalam sesi
+    },
     quickfix = {},
   },
 }
