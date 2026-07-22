@@ -8,128 +8,128 @@ local utils = require("heirline.utils")
 
 -- Definisi Palet Warna Kustom Pengguna
 local colors = {
-  ["bg-main"] = "#0d0e1c",
-  ["bg-dim"] = "#1d2235",
-  ["fg-main"] = "#ffffff",
-  ["fg-dim"] = "#989898",
-  ["fg-alt"] = "#c6daff",
-  ["bg-active"] = "#4a4f69",
-  ["bg-inactive"] = "#2b3045",
-  ["border"] = "#61647a",
-  ["red"] = "#ff5f59",
-  ["red-warmer"] = "#ff6b55",
-  ["red-cooler"] = "#ff7f86",
-  ["red-faint"] = "#ef8386",
+  ["bg-main"] = "#3f3f3f",
+  ["bg-dim"] = "#2e3330",
+  ["fg-main"] = "#dcdccc",
+  ["fg-dim"] = "#9fafaf",
+  ["fg-alt"] = "#d0d0b8",
+  ["bg-active"] = "#5f5f5f",
+  ["bg-inactive"] = "#2b2b2b",
+  ["border"] = "#688060",
+  ["red"] = "#dca3a3",
+  ["red-warmer"] = "#e89393",
+  ["red-cooler"] = "#ecbcbc",
+  ["red-faint"] = "#bc6c4c",
   ["red-intense"] = "#ff5f5f",
-  ["green"] = "#44bc44",
-  ["green-warmer"] = "#75c13e",
-  ["green-cooler"] = "#11c777",
-  ["green-faint"] = "#88ca9f",
-  ["green-intense"] = "#44df44",
-  ["yellow"] = "#d0bc00",
-  ["yellow-warmer"] = "#fec43f",
-  ["yellow-cooler"] = "#dfaf7a",
-  ["yellow-faint"] = "#d2b580",
-  ["yellow-intense"] = "#efef00",
-  ["blue"] = "#2fafff",
-  ["blue-warmer"] = "#79a8ff",
-  ["blue-cooler"] = "#00bcff",
-  ["blue-faint"] = "#82b0ec",
-  ["blue-intense"] = "#338fff",
-  ["magenta"] = "#feacd0",
-  ["magenta-warmer"] = "#f78fe7",
-  ["magenta-cooler"] = "#b6a0ff",
-  ["magenta-faint"] = "#caa6df",
-  ["magenta-intense"] = "#ff66ff",
-  ["cyan"] = "#00d3d0",
-  ["cyan-warmer"] = "#4ae2f0",
-  ["cyan-cooler"] = "#6ae4b9",
-  ["cyan-faint"] = "#9ac8e0",
-  ["cyan-intense"] = "#00eff0",
-  ["rust"] = "#db7b5f",
-  ["gold"] = "#c0965b",
-  ["olive"] = "#9cbd6f",
-  ["slate"] = "#76afbf",
-  ["indigo"] = "#9099d9",
-  ["maroon"] = "#cf7fa7",
-  ["pink"] = "#d09dc0",
-  ["bg-red-intense"] = "#9d1f1f",
-  ["bg-green-intense"] = "#2f822f",
-  ["bg-yellow-intense"] = "#7a6100",
-  ["bg-blue-intense"] = "#1640b0",
-  ["bg-magenta-intense"] = "#7030af",
-  ["bg-cyan-intense"] = "#2266ae",
-  ["bg-red-subtle"] = "#620f2a",
-  ["bg-green-subtle"] = "#00422a",
-  ["bg-yellow-subtle"] = "#4a4000",
-  ["bg-blue-subtle"] = "#242679",
-  ["bg-magenta-subtle"] = "#552f5f",
-  ["bg-cyan-subtle"] = "#004065",
-  ["bg-red-nuanced"] = "#3a0c14",
-  ["bg-green-nuanced"] = "#092f1f",
-  ["bg-yellow-nuanced"] = "#381d0f",
-  ["bg-blue-nuanced"] = "#12154a",
-  ["bg-magenta-nuanced"] = "#2f0c3f",
-  ["bg-cyan-nuanced"] = "#042837",
-  ["bg-clay"] = "#49191a",
+  ["green"] = "#7f9f7f",
+  ["green-warmer"] = "#88b090",
+  ["green-cooler"] = "#93b3a3",
+  ["green-faint"] = "#709080",
+  ["green-intense"] = "#8cd0d3",
+  ["yellow"] = "#f0dfaf",
+  ["yellow-warmer"] = "#ffcfaf",
+  ["yellow-cooler"] = "#e3ceab",
+  ["yellow-faint"] = "#d2d39b",
+  ["yellow-intense"] = "#efef8f",
+  ["blue"] = "#8cd0d3",
+  ["blue-warmer"] = "#9fafaf",
+  ["blue-cooler"] = "#93e0e3",
+  ["blue-faint"] = "#82a282",
+  ["blue-intense"] = "#385f38",
+  ["magenta"] = "#dc8cc3",
+  ["magenta-warmer"] = "#cfbfaf",
+  ["magenta-cooler"] = "#bca3a3",
+  ["magenta-faint"] = "#c3bf9f",
+  ["magenta-intense"] = "#ecbcbc",
+  ["cyan"] = "#93e0e3",
+  ["cyan-warmer"] = "#8cd0d3",
+  ["cyan-cooler"] = "#9fafaf",
+  ["cyan-faint"] = "#93b3a3",
+  ["cyan-intense"] = "#93e0e3",
+  ["rust"] = "#dfaf8f",
+  ["gold"] = "#d0bf8f",
+  ["olive"] = "#7f9f7f",
+  ["slate"] = "#9fafaf",
+  ["indigo"] = "#8cd0d3",
+  ["maroon"] = "#dca3a3",
+  ["pink"] = "#dc8cc3",
+  ["bg-red-intense"] = "#702020",
+  ["bg-green-intense"] = "#313c36",
+  ["bg-yellow-intense"] = "#464646",
+  ["bg-blue-intense"] = "#3f4040",
+  ["bg-magenta-intense"] = "#484848",
+  ["bg-cyan-intense"] = "#385f38",
+  ["bg-red-subtle"] = "#463838",
+  ["bg-green-subtle"] = "#313c36",
+  ["bg-yellow-subtle"] = "#444438",
+  ["bg-blue-subtle"] = "#33383a",
+  ["bg-magenta-subtle"] = "#443844",
+  ["bg-cyan-subtle"] = "#384444",
+  ["bg-red-nuanced"] = "#3a2a2a",
+  ["bg-green-nuanced"] = "#2e3832",
+  ["bg-yellow-nuanced"] = "#38362e",
+  ["bg-blue-nuanced"] = "#2e3238",
+  ["bg-magenta-nuanced"] = "#382e38",
+  ["bg-cyan-nuanced"] = "#2e3838",
+  ["bg-clay"] = "#49393a",
   ["fg-clay"] = "#f1b090",
-  ["bg-ochre"] = "#462f20",
+  ["bg-ochre"] = "#463f20",
   ["fg-ochre"] = "#e0d09c",
-  ["bg-lavender"] = "#38325c",
+  ["bg-lavender"] = "#38324c",
   ["fg-lavender"] = "#dfc0f0",
-  ["bg-sage"] = "#143e32",
+  ["bg-sage"] = "#2e3e32",
   ["fg-sage"] = "#c3e7d4",
-  ["bg-graph-red-0"] = "#b52c2c",
+  ["bg-graph-red-0"] = "#dca3a3",
   ["bg-graph-red-1"] = "#702020",
-  ["bg-graph-green-0"] = "#0fed00",
-  ["bg-graph-green-1"] = "#007800",
-  ["bg-graph-yellow-0"] = "#f1e00a",
-  ["bg-graph-yellow-1"] = "#b08940",
-  ["bg-graph-blue-0"] = "#2fafef",
-  ["bg-graph-blue-1"] = "#1f2f8f",
-  ["bg-graph-magenta-0"] = "#bf94fe",
-  ["bg-graph-magenta-1"] = "#5f509f",
-  ["bg-graph-cyan-0"] = "#47dfea",
-  ["bg-graph-cyan-1"] = "#00808f",
-  ["bg-completion"] = "#483d8a",
-  ["bg-hover"] = "#45605e",
-  ["bg-hover-secondary"] = "#64404f",
-  ["bg-hl-line"] = "#303a6f",
-  ["bg-region"] = "#555a66",
-  ["fg-region"] = "#ffffff",
-  ["bg-mode-line-active"] = "#484d67",
-  ["fg-mode-line-active"] = "#ffffff",
-  ["border-mode-line-active"] = "#979797",
-  ["bg-mode-line-inactive"] = "#292d48",
-  ["fg-mode-line-inactive"] = "#969696",
-  ["border-mode-line-inactive"] = "#606270",
-  ["modeline-err"] = "#ffa9bf",
-  ["modeline-warning"] = "#dfcf43",
-  ["modeline-info"] = "#9fefff",
-  ["bg-tab-bar"] = "#2c3045",
-  ["bg-tab-current"] = "#0d0e1c",
-  ["bg-tab-other"] = "#4a4f6a",
-  ["bg-added"] = "#003a2f",
-  ["bg-added-faint"] = "#002922",
-  ["bg-added-refine"] = "#035542",
-  ["bg-added-fringe"] = "#23884f",
-  ["fg-added"] = "#a0e0a0",
-  ["fg-added-intense"] = "#80e080",
-  ["bg-changed"] = "#363300",
-  ["bg-changed-faint"] = "#2a1f00",
-  ["bg-changed-refine"] = "#4a4a00",
+  ["bg-graph-green-0"] = "#7f9f7f",
+  ["bg-graph-green-1"] = "#313c36",
+  ["bg-graph-yellow-0"] = "#f0dfaf",
+  ["bg-graph-yellow-1"] = "#8f7a30",
+  ["bg-graph-blue-0"] = "#8cd0d3",
+  ["bg-graph-blue-1"] = "#385f38",
+  ["bg-graph-magenta-0"] = "#dc8cc3",
+  ["bg-graph-magenta-1"] = "#5f507f",
+  ["bg-graph-cyan-0"] = "#93e0e3",
+  ["bg-graph-cyan-1"] = "#284f28",
+  ["bg-completion"] = "#4f4f4f",
+  ["bg-hover"] = "#4f4f4f",
+  ["bg-hover-secondary"] = "#4a3f3f",
+  ["bg-hl-line"] = "#434443",
+  ["bg-region"] = "#5f5f5f",
+  ["fg-region"] = "#dcdccc",
+  ["bg-mode-line-active"] = "#2e3330",
+  ["fg-mode-line-active"] = "#ccdc90",
+  ["border-mode-line-active"] = "#688060",
+  ["bg-mode-line-inactive"] = "#262626",
+  ["fg-mode-line-inactive"] = "#88b090",
+  ["border-mode-line-inactive"] = "#3f4040",
+  ["modeline-err"] = "#dca3a3",
+  ["modeline-warning"] = "#f0dfaf",
+  ["modeline-info"] = "#8cd0d3",
+  ["bg-tab-bar"] = "#222222",
+  ["bg-tab-current"] = "#3f3f3f",
+  ["bg-tab-other"] = "#313633",
+  ["bg-added"] = "#313c36",
+  ["bg-added-faint"] = "#26302a",
+  ["bg-added-refine"] = "#384a40",
+  ["bg-added-fringe"] = "#709080",
+  ["fg-added"] = "#709080",
+  ["fg-added-intense"] = "#7f9f7f",
+  ["bg-changed"] = "#333333",
+  ["bg-changed-faint"] = "#2a2a20",
+  ["bg-changed-refine"] = "#4a4a30",
   ["bg-changed-fringe"] = "#8f7a30",
-  ["fg-changed"] = "#efef80",
-  ["fg-changed-intense"] = "#c0b05f",
-  ["bg-removed"] = "#4f1127",
-  ["bg-removed-faint"] = "#380a19",
-  ["bg-removed-refine"] = "#781a3a",
-  ["bg-removed-fringe"] = "#b81a26",
-  ["fg-removed"] = "#ffbfbf",
-  ["fg-removed-intense"] = "#ff9095",
-  ["bg-diff-context"] = "#1a1f30",
-  ["bg-paren-match"] = "#4f7f9f",
-  ["bg-paren-expression"] = "#453040",
+  ["fg-changed"] = "#f0dfaf",
+  ["fg-changed-intense"] = "#ffcfaf",
+  ["bg-removed"] = "#464646",
+  ["bg-removed-faint"] = "#382a2a",
+  ["bg-removed-refine"] = "#583a3a",
+  ["bg-removed-fringe"] = "#b85a5a",
+  ["fg-removed"] = "#dca3a3",
+  ["fg-removed-intense"] = "#e89393",
+  ["bg-diff-context"] = "#2e3330",
+  ["bg-paren-match"] = "#385f38",
+  ["bg-paren-expression"] = "#453840",
 }
 
 -- Aliases dari palet warna
@@ -503,14 +503,61 @@ local Diagnostics = {
   { provider = ")" },
 }
 
--- 5. LSP Active Server Names
+-- 5. Active Tools (LSP, Formatter, Linter)
 local LSPActive = {
-  condition = conditions.lsp_attached,
-  update = { 'LspAttach', 'LspDetach', 'BufEnter' },
+  update = { 'LspAttach', 'LspDetach', 'BufEnter', 'BufWritePost' },
   provider = function()
     local names = {}
+    local seen = {}
+
+    -- 1. LSP servers
     for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-      table.insert(names, server.name)
+      if not seen[server.name] then
+        seen[server.name] = true
+        table.insert(names, server.name)
+      end
+      -- Detect Clippy if rust_analyzer uses clippy for checking
+      if server.name == 'rust_analyzer' or server.name == 'rust-analyzer' then
+        local settings = (server.config and server.config.settings) or server.settings or {}
+        local ra = settings['rust-analyzer'] or settings.rust_analyzer or {}
+        local check = ra.check or {}
+        if check.command == 'clippy' or check == 'clippy' then
+          if not seen['clippy'] then
+            seen['clippy'] = true
+            table.insert(names, 'clippy')
+          end
+        end
+      end
+    end
+
+    -- 2. Formatters (conform.nvim)
+    local ok_conform, conform = pcall(require, 'conform')
+    if ok_conform then
+      local formatters = conform.list_formatters(0)
+      for _, fmt in ipairs(formatters) do
+        if fmt.available and not seen[fmt.name] then
+          seen[fmt.name] = true
+          table.insert(names, fmt.name)
+        end
+      end
+    end
+
+    -- 3. Linters (nvim-lint)
+    local ok_lint, lint = pcall(require, 'lint')
+    if ok_lint then
+      local linters = lint.linters_by_ft[vim.bo.filetype]
+      if type(linters) == 'table' then
+        for _, lnt in ipairs(linters) do
+          if not seen[lnt] then
+            seen[lnt] = true
+            table.insert(names, lnt)
+          end
+        end
+      end
+    end
+
+    if #names == 0 then
+      return ""
     end
     return " [" .. table.concat(names, " ") .. "]"
   end,
