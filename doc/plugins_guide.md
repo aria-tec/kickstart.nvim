@@ -1,25 +1,28 @@
-# Panduan Lengkap: Fungsi & Peran 45 Plugin Neovim Anda
+# Panduan Lengkap: Fungsi & Peran 47 Plugin Neovim Anda
 
-Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **45 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json`.
+Dokumen ini berisi panduan terperinci mengenai fungsi, peran, dan cara kerja dari seluruh **47 plugin** yang terpasang pada konfigurasi Neovim Anda berdasarkan berkas `nvim-pack-lock.json` dan modul kustom `lua/custom/plugins/`.
 
 ---
 
 ## Daftar Isi
-1. [Core & Infrastruktur Dasar (9 Plugin)](#1-core--infrastruktur-dasar-9-plugin)
+1. [Core & Infrastruktur Dasar (10 Plugin)](#1-core--infrastruktur-dasar-10-plugin)
 2. [Language Server Protocol - LSP (5 Plugin)](#2-language-server-protocol---lsp-5-plugin)
 3. [Autocompletion & Snippets (5 Plugin)](#3-autocompletion--snippets-5-plugin)
 4. [Formatting & Linting (2 Plugin)](#4-formatting--linting-2-plugin)
 5. [Treesitter & Penyorotan Sintaksis (3 Plugin)](#5-treesitter--penyorotan-sintaksis-3-plugin)
 6. [Navigasi & Pencarian (7 Plugin)](#6-navigasi--pencarian-7-plugin)
 7. [Integrasi TypeScript & Web Dev (6 Plugin)](#7-integrasi-typescript--web-dev-6-plugin)
-8. [Perilaku Editor & Utilitas Cerdas (8 Plugin)](#8-perilaku-editor--utilitas-cerdas-8-plugin)
+8. [Perilaku Editor & Utilitas Cerdas (9 Plugin)](#8-perilaku-editor--utilitas-cerdas-9-plugin)
 9. [Estetika & Antarmuka UI (5 Plugin)](#9-estetika--antarmuka-ui-5-plugin)
 
 ---
 
-## 1. Core & Infrastruktur Dasar (9 Plugin)
+## 1. Core & Infrastruktur Dasar (10 Plugin)
 
 Bagian ini memuat library fundamental dan pengelola ekosistem Neovim yang menyokong plugin lainnya.
+
+*   ### [resession.nvim](https://github.com/stevearc/resession.nvim)
+    *   **Fungsi:** Pengelola sesi (*session manager*) modern untuk Neovim dari `stevearc`. Berfungsi menyimpan dan memulihkan kondisi buffer, layout window, tab, dan status task `overseer.nvim` secara persisten per direktori proyek (pemicu: `<leader>ss` untuk simpan, `<leader>sl` untuk muat, `<leader>sd` untuk hapus).
 
 *   ### [mini.nvim](https://github.com/nvim-mini/mini.nvim)
     *   **Fungsi:** Library modular serbaguna yang sangat cepat. Pada Kickstart Anda, modul ini digunakan untuk:
@@ -147,10 +150,12 @@ Perkakas khusus untuk mempercepat penulisan kode ekosistem JavaScript, TypeScrip
 
 ---
 
-## 8. Perilaku Editor & Utilitas Cerdas (8 Plugin)
+## 8. Perilaku Editor & Utilitas Cerdas (9 Plugin)
 
 Plugin yang memodifikasi atau menambah fitur penyuntingan standar Neovim agar lebih modern.
 
+*   ### [overseer.nvim](https://github.com/stevearc/overseer.nvim)
+    *   **Fungsi:** Manajer tugas (*task runner*) dan job manager asinkron dari `stevearc`. Memungkinkan pembuatan, pengoperasian, pelacakan, dan visualisasi build tasks, test suite, linters, atau shell scripts dengan panel UI interaktif (pemicu: `<leader>or` untuk OverseerRun, `<leader>ot` untuk OverseerToggle). Terintegrasi dengan `heirline.nvim`, `edgy.nvim`, dan `resession.nvim`.
 *   ### [yanky.nvim](https://github.com/gbprod/yanky.nvim)
     *   **Fungsi:** Pengelola memori klipbor (*yank ring*). Menyimpan riwayat teks yang disalin hingga 100 entri, dapat diputar siklusnya setelah ditempel dengan `<C-p>` / `<C-n>`, serta terintegrasi visual dengan Telescope (`<leader>sy`).
 *   ### [undotree](https://github.com/mbbill/undotree)
