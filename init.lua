@@ -866,8 +866,8 @@ do
     },
     html = {},
     cssls = {},
-    typos_lsp = {},
-    harper_ls = {},
+    -- typos_lsp = {},
+    -- harper_ls = {},
     stylua = {}, -- Used to format Lua code
 
     -- Special Lua Config, as recommended by neovim help docs
@@ -1111,6 +1111,12 @@ do
     'json',
     'rust',
   }
+  vim.filetype.add {
+    extension = {
+      mdx = 'mdx',
+    },
+  }
+  vim.treesitter.language.register('markdown', 'mdx')
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer
