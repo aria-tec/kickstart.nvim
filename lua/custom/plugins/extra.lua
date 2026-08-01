@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>ut', '<cmd>UndotreeToggle<CR>', { desc = '[U]ndo [T
 -- Penyorotan otomatis penggunaan kata lain di bawah kursor
 vim.pack.add { 'https://github.com/RRethy/vim-illuminate' }
 
-require('illuminate').configure({
+require('illuminate').configure {
   -- Menggunakan LSP, Treesitter, atau Regex sebagai fallback pencocokan kata
   providers = {
     'lsp',
@@ -25,7 +25,7 @@ require('illuminate').configure({
   large_file_overrides = {
     providers = { 'lsp' },
   },
-})
+}
 
 -- 3. inc-rename.nvim
 -- Melakukan rename variabel LSP secara interaktif / incremental (real-time preview)
@@ -34,9 +34,7 @@ vim.pack.add { 'https://github.com/smjonas/inc-rename.nvim' }
 require('inc_rename').setup {}
 
 -- Map grn untuk memicu incremental rename dan mengisi nama lama secara otomatis
-vim.keymap.set('n', 'grn', function()
-  return ':IncRename ' .. vim.fn.expand('<cword>')
-end, { expr = true, desc = '[R]e[n]ame (incremental)' })
+vim.keymap.set('n', 'grn', function() return ':IncRename ' .. vim.fn.expand '<cword>' end, { expr = true, desc = '[R]e[n]ame (incremental)' })
 
 -- 4. leetcode.nvim
 -- Membantu menyelesaikan soal-soal LeetCode langsung di dalam Neovim
@@ -47,7 +45,7 @@ vim.pack.add {
 
 require('leetcode').setup {
   arg = 'leetcode.nvim',
-  lang = 'cpp', -- Bahasa pemrograman default (bisa diubah sesuai preferensi)
+  lang = 'rust', -- Bahasa pemrograman default (bisa diubah sesuai preferensi)
 }
 
 -- 5. mini.operators
@@ -66,4 +64,3 @@ require('mini.visits').setup()
 -- 7. mini.starter
 -- Halaman awal (start screen) Neovim yang interaktif saat dibuka tanpa argumen
 require('mini.starter').setup()
-
